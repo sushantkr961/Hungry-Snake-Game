@@ -1,6 +1,6 @@
-let blocksize = 25;
-let rows = 20;
-let cols = 20;
+let blocksize = 20; // square=25*25mm
+let rows = 25;
+let cols = 25;
 let board, context;
 
 // Snake head
