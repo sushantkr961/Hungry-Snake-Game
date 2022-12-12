@@ -1,4 +1,4 @@
-let blocksize = 20; // square=25*25mm
+let blocksize = 20; // square=25*25mm (1unit=25mm)
 let rows = 25;
 let cols = 25;
 let board, context;
