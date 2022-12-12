@@ -40,11 +40,11 @@ function update() {
   }
 
   // board colour and size
-  context.fillStyle = "lime";
+  context.fillStyle = "#2a3240";
   context.fillRect(0, 0, board.width, board.height);
 
   //food color and position
-  context.fillStyle = "red";
+  context.fillStyle = "#e47946";
   context.fillRect(foodX, foodY, blocksize, blocksize);
 
   // when snake touches the food
@@ -65,7 +65,7 @@ function update() {
   } // now the body is moving with head
 
   // position and color of snake
-  context.fillStyle = "blue";
+  context.fillStyle = "#2f74c8";
   snakeX += velocityX * blocksize;
   snakeY += velocityY * blocksize;
   context.fillRect(snakeX, snakeY, blocksize, blocksize);
