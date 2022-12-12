@@ -40,7 +40,7 @@ function update() {
   }
 
   // board colour and size
-  context.fillStyle = "black";
+  context.fillStyle = "lime";
   context.fillRect(0, 0, board.width, board.height);
 
   //food color and position
@@ -65,14 +65,14 @@ function update() {
   } // now the body is moving with head
 
   // position and color of snake
-  context.fillStyle = "lime";
+  context.fillStyle = "blue";
   snakeX += velocityX * blocksize;
   snakeY += velocityY * blocksize;
   context.fillRect(snakeX, snakeY, blocksize, blocksize);
 
   // when we do this for knowing the where snake eat food but it doesn't increase the snake length
   for (let i = 0; i < snakeBody.length; i++) {
-    context.fillRect(snakeBody[i][0], snakeBody[i][(1, blocksize, blocksize)]);
+    context.fillRect(snakeBody[i][0], snakeBody[i][1], blocksize, blocksize);
   }
 
   // game over conditions
@@ -85,6 +85,7 @@ function update() {
   ) {
     gameOver = true;
     alert("Game Over");
+    location.reload();
   }
 
   // 2. if snake touches or eats his own body
@@ -92,13 +93,9 @@ function update() {
     if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
       gameOver = true;
       alert("Game Over");
+      location.reload();
     }
   }
-}
-
-function foodPlaceChange() {
-  foodX = Math.floor(Math.random() * rows) * blocksize;
-  foodY = Math.floor(Math.random() * cols) * blocksize;
 }
 
 function changeDirection(event) {
@@ -116,4 +113,9 @@ function changeDirection(event) {
     velocityX = 1;
     velocityY = 0;
   }
+}
+
+function foodPlaceChange() {
+  foodX = Math.floor(Math.random() * cols) * blocksize;
+  foodY = Math.floor(Math.random() * rows) * blocksize;
 }
