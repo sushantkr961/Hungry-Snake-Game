@@ -1,23 +1,21 @@
-body{
-    background-color: #cbcbcb;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-
+body {
+  background-color: #cbcbcb;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
 }
-h6{
-    color: antiquewhite;
-    margin-top: -20px;
+h6 {
+  color: antiquewhite;
+  margin-top: -20px;
 }
-h1{
-    margin-top: 100px;
-    font-weight: bold;
+h1 {
+  margin-top: 100px;
+  font-weight: bold;
 }
-#board{
-    box-shadow: 	12px 14px 12px -7px rgba(30,115,190,0.38),
-		9px 9px 10px -7px rgba(0,0,0,0.19) inset;
-background-color: rgb(63,131,191);
-border:	1px solid rgba(0,0,0,0.13);
-border-radius:	7px;
-outline:	20px solid rgba(30,116,191,0.33);
-
+#board {
+  box-shadow: 12px 14px 12px -7px rgba(30, 115, 190, 0.38),
+    9px 9px 10px -7px rgba(0, 0, 0, 0.19) inset;
+  background-color: rgb(63, 131, 191);
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
+  outline: 20px solid rgba(30, 116, 191, 0.33);
 }
