@@ -7,5 +7,5 @@ This is a snake game for entertainment. I build this project by myself and take 
 - Netlify
 
 ## Overview
-
+![Overview](assests/overview.png)
 
