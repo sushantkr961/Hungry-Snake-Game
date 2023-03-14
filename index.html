@@ -9,12 +9,37 @@
     <title>Hungry Snake</title>
   </head>
   <body>
-    <h1>Snake</h1>
-    <h6>by Sushant Kumar</h6>
-    <canvas id="board">
-      <!-- canvas is used to make graphics in html -->
-    </canvas>
+    <div id="author">
+      <h1>Hungry Snake</h1>
+      <h6>by Sushant Kumar</h6>
+    </div>
+    <div id="plot">
+      <div id="container">
+        <div id="score-board">
+          <div id="score">Score: 0</div>
+          <div id="high-score">High Score: 0</div>
+        </div>
+        <div id="board"></div>
+      </div>
+      <div id="controller">
+        <!-- <div>
+          <label>Difficulty</label>
+          <select id="speed">
+            <option value="normal">Normal</option>
+            <option value="easy">Easy</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div> -->
 
-    <script src="./snake.js"></script>
+        <div class="controls">
+          <i id="up" data-key="ArrowUp">U</i>
+          <i id="left" data-key="ArrowLeft">L</i>
+          <i id="right" data-key="ArrowRight">R</i>
+          <i id="down" data-key="ArrowDown">D</i>
+        </div>
+      </div>
+    </div>
+
+    <script src="snake.js"></script>
   </body>
 </html>
