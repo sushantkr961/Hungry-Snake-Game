@@ -2,27 +2,38 @@ const board = document.querySelector("#board");
 const currentScore = document.querySelector("#score");
 const highestScore = document.querySelector("#high-score");
 const controls = document.querySelectorAll(".controls i");
+const playPauseBtn = document.querySelector("#play-pause-btn");
 
+// game over
 let gameOver = false;
+// play pause
+let isPlaying = true;
+// food
 let foodX, foodY;
+// snake starting position
 let snakeX = 5,
   snakeY = 5;
+// speed initial
 let velocityX = 0,
   velocityY = 0;
+// snake body
 let snakeBody = [];
 let setIntervalId;
+// score count
 let score = 0;
 
 // Getting high score from the local storage
 let highScore = localStorage.getItem("high-score") || 0;
 highestScore.innerText = `High Score: ${highScore}`;
 
+// food position
 const updateFoodPosition = () => {
   // Passing a random 1 - 30 value as food position
   foodX = Math.floor(Math.random() * 30) + 1;
   foodY = Math.floor(Math.random() * 30) + 1;
 };
 
+// game Over function
 const handleGameOver = () => {
   // Clearing the timer and reloading the page on game over
   clearInterval(setIntervalId);
@@ -30,6 +41,7 @@ const handleGameOver = () => {
   location.reload();
 };
 
+// change direction function
 const changeDirection = (e) => {
   // Changing velocity value based on key press
   if (e.key === "ArrowUp" && velocityY != 1) {
@@ -54,6 +66,7 @@ controls.forEach((button) =>
   )
 );
 
+// funtion for initializing the game
 const initGame = () => {
   if (gameOver) return handleGameOver();
   let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
@@ -98,25 +111,22 @@ const initGame = () => {
   // console.log(board);
   board.innerHTML = html;
 };
-
-let snakeSpeed = 120;
-// let speed = document.getElementById("speed");
-// speed.addEventListener("change", () => {
-//   let selected = document.getElementById("speed").value;
-//   console.log(selected);
-//   if (selected == "normal") {
-//     snakeSpeed = 120;
-//   }
-//   if (selected == "hard") {
-//     snakeSpeed = 60;
-//   }
-//   if (selected == "easy") {
-//     snakeSpeed = 240;
-//   }
-// });
-
+// calling the function
 updateFoodPosition();
 // speed of the snake is 100, it will move snake after every 100ms
-setIntervalId = setInterval(initGame, snakeSpeed);
+setIntervalId = setInterval(initGame, 120);
 // event on keypress on the keyboard
 document.addEventListener("keyup", changeDirection);
+
+// play pause functionality
+playPauseBtn.addEventListener("click", () => {
+  if (isPlaying) {
+    clearInterval(setIntervalId);
+    playPauseBtn.innerText = "Play";
+    isPlaying = false;
+  } else {
+    setIntervalId = setInterval(initGame, 120);
+    playPauseBtn.innerText = "Pause";
+    isPlaying = true;
+  }
+});

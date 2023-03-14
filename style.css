@@ -100,7 +100,25 @@ h1 {
 .food {
   background: tomato;
   border-radius: 50%;
+  /* position: absolute; */
 }
+
+@keyframes food-animation {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+/* Apply the animation to the food */
+.food {
+  animation: food-animation 1s infinite;
+}
+
 .snakeHead {
   background: teal;
   border-radius: 30%;
