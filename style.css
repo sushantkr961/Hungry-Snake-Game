@@ -66,41 +66,48 @@ h1 {
 }
 
 .controls i {
-  border: 1px solid;
-  padding: 15px;
+  padding: 10px;
   cursor: pointer;
+  font-size: xx-large;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.controls i:hover {
+  background-color: #212837;
+  color: #ffffff;
 }
 
 #left{
-  font-size: xx-large;
+  padding-left: 20px;
   grid-column-start: 1;
   grid-column-end: 2;
 }
 
 #up{
-  font-size: xx-large;
+  padding-left: 23px;
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
 #right{
-  font-size: xx-large;
+  padding-left: 20px;
   grid-column-start: 3;
   grid-column-end: 4;
 }
 
 #down{
-  font-size: xx-large;
+  padding-left: 23px;
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+}
+
+#play-pause-btn{
+  padding-left: 20px;
 }
 
 .food {
   background: tomato;
   border-radius: 50%;
-  /* position: absolute; */
 }
 
 @keyframes food-animation {
@@ -122,6 +129,19 @@ h1 {
 .snakeHead {
   background: teal;
   border-radius: 30%;
+  animation: head-animation 0.2s ease-in-out infinite alternate;
+}
+
+@keyframes head-animation {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 @media screen and (max-width: 1200px){

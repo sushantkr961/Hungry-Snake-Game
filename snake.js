@@ -122,11 +122,11 @@ document.addEventListener("keyup", changeDirection);
 playPauseBtn.addEventListener("click", () => {
   if (isPlaying) {
     clearInterval(setIntervalId);
-    playPauseBtn.innerText = "Play";
+    playPauseBtn.innerHTML = "&#9658;";
     isPlaying = false;
   } else {
     setIntervalId = setInterval(initGame, 120);
-    playPauseBtn.innerText = "Pause";
+    playPauseBtn.innerHTML = "&#9612;&#9612;";
     isPlaying = true;
   }
 });
